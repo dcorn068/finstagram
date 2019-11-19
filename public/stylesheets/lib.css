@@ -2,8 +2,9 @@
   box-sizing: border-box;
 }
 
-body, input {
-  font-family: 'Roboto Condensed', sans-serif;
+body,
+input {
+  font-family: "Roboto Condensed", sans-serif;
   margin: 0;
   color: #244751;
 }
@@ -15,12 +16,14 @@ a {
 
 label {
   display: block;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   border: solid 1px #244751;
-  padding: .5em;
+  padding: 0.5em;
   width: 200px;
   font-size: 1em;
 }
@@ -54,7 +57,7 @@ main {
 }
 
 .button {
-  padding: .5em;
+  padding: 0.5em;
   background-color: white;
   border: solid 1px #244751;
   display: inline-block;
@@ -74,7 +77,7 @@ main {
 }
 
 .user-info h2 {
-  margin: 0 0 0 .5em;
+  margin: 0 0 0 0.5em;
 }
 
 .user-info h3 {
@@ -96,8 +99,8 @@ main {
 }
 
 .actions button.user-like {
-  color: #FF2600;
-  border-color: #FF2600;
+  color: #ff2600;
+  border-color: #ff2600;
 }
 
 .actions .comment-count {
