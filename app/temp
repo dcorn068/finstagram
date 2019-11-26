@@ -1,0 +1,76 @@
+def get_humanized_time_ago(time_ago_in_minutes)
+  if time_ago_in_minutes >= 60
+    "#{time_ago_in_minutes / 60} hours ago"
+  else
+    "#{time_ago_in_minutes} minutes ago"
+  end
+end
+
+finstagram_post_shark = {
+    username: "marlin_peppa",
+    avatar_url: "http://naserca.com/images/marlin_peppa.jpg",
+    photo_url: "http://naserca.com/images/marlin.jpg",
+    humanized_time_ago: get_humanized_time_ago(190),
+    like_count: 0,
+    comment_count: 1,
+    comments: [{
+      username: "marlin_peppa",
+      text: "lunchtime! ;)"
+    }]
+  }
+finstagram_post_whale = {
+    username: "marlin_peppa",
+    avatar_url: "http://naserca.com/images/marlin_peppa.jpg",
+    photo_url: "http://naserca.com/images/marlin.jpg",
+    humanized_time_ago: get_humanized_time_ago(190),
+    like_count: 0,
+    comment_count: 1,
+    comments: [{
+      username: "marlin_peppa",
+      text: "lunchtime! ;)"
+    }]
+  }
+finstagram_post_marlin = {
+    username: "marlin_peppa",
+    avatar_url: "http://naserca.com/images/marlin_peppa.jpg",
+    photo_url: "http://naserca.com/images/marlin.jpg",
+    humanized_time_ago: get_humanized_time_ago(190),
+    like_count: 0,
+    comment_count: 1,
+    comments: [{
+      username: "marlin_peppa",
+      text: "lunchtime! ;)",
+    }]
+  }
+  
+get '/' do
+  # ...
+  # Here you would have all of the code for your posts
+  # ...
+
+  # This is the new addition
+  posts_array = [finstagram_post_shark, finstagram_post_whale, finstagram_post_marlin]
+  stringified_posts = posts_array.to_s
+  return stringified_posts
+end
+
+get '/fizzbuzz' do
+# FIZZ
+# If the number is divisible by 3, output 'Fizz'
+
+# BUZZ
+# If the number is divisible by 5, output 'Buzz'
+
+# FIZZBUZZ
+# If the number is divisible by BOTH 3 and 5, output 'FizzBuzz'
+
+# loop in ruby
+
+
+# condition in ruby
+myString = ''
+
+myString = myString + 'Fizz'
+
+myString
+end

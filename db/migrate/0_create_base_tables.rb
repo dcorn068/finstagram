@@ -1,5 +1,4 @@
 class CreateBaseTables < ActiveRecord::Migration
-
   def change
     create_table :users do |t|
       t.string :username
@@ -27,7 +26,5 @@ class CreateBaseTables < ActiveRecord::Migration
       t.references :finstagram_post
       t.timestamps
     end
-
   end
-
 end

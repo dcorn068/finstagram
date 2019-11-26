@@ -13,7 +13,10 @@ gem 'puma'
 gem 'tux'
 
 group :development, :test do
-  gem 'pry'
-  gem 'shotgun'
-  gem 'sqlite3', '~> 1.3.6'
+    gem 'pry'
+    gem 'shotgun'
+    gem 'prettier'
+    gem 'sqlite3', '~> 1.3.6'
+    gem 'rerun'
+    gem 'sinatra-reloader'
 end

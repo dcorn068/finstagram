@@ -21,7 +21,7 @@ configure do
   enable :sessions
   set :session_secret, ENV['SESSION_KEY'] || 'lighthouselabssecret'
 
-  set :views, File.join(Sinatra::Application.root, "app", "views")
+  set :views, File.join(Sinatra::Application.root, 'app', 'views')
 end
 
 # Set up the database and models

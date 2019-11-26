@@ -1,3 +1,4 @@
 get '/' do
-   File.read('app/views/index.html')
+    @example_string = "cool dawg"
+    erb(:index) # look in app/views for a file called "index.erb"
 end
