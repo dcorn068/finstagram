@@ -4,7 +4,7 @@ class FinstagramPost < ActiveRecord::Base
   has_many :comment
   has_many :like
 
-#   validates_presence_of :user
+  validates :user, presence: true
 
   def humanized_time_ago
     return 0

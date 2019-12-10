@@ -2,7 +2,6 @@ vscode:
   extensions:
     - esbenp.prettier-vscode@3.2.1:8tE6frXOvsWQ9kRk24kSgw==
     - aaron-bond.better-comments@2.0.5:YKNfOclR4e8XAxlj4xp2AA==
-    - ms-vsliveshare.vsliveshare-pack@0.3.4:SHAGljo8pKUdyOKmsw+SXw==
     - formulahendry.code-runner@0.9.15:WUpvbF4Wg44WiaFa7exZBw==
     - alexcvzz.vscode-sqlite@0.8.0:7GWBMq/QCUqZTfCrc61bVg==
     - rebornix.ruby@0.26.0:RN+gv0dPjYfMqlcEEralhg==

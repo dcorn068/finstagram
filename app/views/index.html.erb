@@ -1,6 +1,16 @@
 <header>
   <h1>Finstagram</h1>
+  <div class="login-info" style="margin-right: 1em;">
+    <% if current_user %>
+      <%= current_user.username %>
+      <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/login">Login</a>
+      <a href="/signup">Signup</a>
+    <% end %>
+  </div>
 </header>
+
 <main role="main">
   <% @finstagram_posts.each do |finstagram_post| %>
     <article class="finstagram-post">
@@ -19,7 +29,8 @@
       <ul class="comments">
         <li>
           <p>
-            <%= finstagram_post[:comments][0][:username] %>: <%= finstagram_post[:comments][0][:text] %>
+            <%= finstagram_post[:comments][0][:username] if finstagram_post[:comments] %>: 
+            <%= finstagram_post[:comments][0][:text] if finstagram_post[:comments] %>
           </p>
         </li>
       </ul>
