@@ -105,28 +105,39 @@ end
 #### NEW POST ###
 #################
 
-get '/new_post' do
+# show the "submit a post" form
+get '/posts/new' do
     @new_post = FinstagramPost.new
 
     if current_user
-        erb(:new_post)
+        erb(:"posts/new")
     else
         redirect to('/login')
     end
 end
 
-post '/new_post' do
-    my_user_id = current_user.id
+# process a new finstagram post form submission
+post '/posts' do
     my_photo_url = params[:photo_url]
 
     @new_post = FinstagramPost.new({ 
         photo_url: my_photo_url, 
-        user_id: my_user_id, 
+        user_id: current_user.id, 
         })
 
     if @new_post.save
         redirect to('/')
     else
-        erb(:new_post)
+        erb(:"posts/new")
     end
+end
+
+
+
+##########################
+#### VIEW SINGLE POST ####
+##########################
+get '/posts/:id' do
+  @finstagram_post = FinstagramPost.find(params[:id])   # find the finstagram post with the ID from the URL
+  erb(:"posts/show")               # render app/views/finstagram_posts/show.erb
 end

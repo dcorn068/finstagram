@@ -1,10 +1,10 @@
 class FinstagramPost < ActiveRecord::Base
 
   belongs_to :user
-  has_many :comment
-  has_many :like
+  has_many :comments
+  has_many :likes
 
-  validates :user, presence: true
+  validates :photo_url, :user, presence: true
 
   def humanized_time_ago
     return 0

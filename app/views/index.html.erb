@@ -1,39 +1,9 @@
-<header>
-  <h1>Finstagram</h1>
-  <div class="login-info" style="margin-right: 1em;">
-    <% if current_user %>
-      <%= current_user.username %>
-      <a href="/logout">Logout</a>
-    <% else %>
-      <a href="/login">Login</a>
-      <a href="/signup">Signup</a>
-    <% end %>
+<% if current_user %>
+  <div class="new-finstagram-post">
+    <a href="/posts/new" class="button">New Post</a>
   </div>
-</header>
+<% end %>
 
-<main role="main">
-  <% @finstagram_posts.each do |finstagram_post| %>
-    <article class="finstagram-post">
-      <div class="user-info">
-        <img src="<%= finstagram_post[:avatar_url] %>" alt="<%= finstagram_post[:username] %>">
-        <h2><%= finstagram_post[:username] %></h2>
-        <h3><%= finstagram_post[:humanized_time_ago] %></h3>
-      </div>
-      <a class="photo" href="#">
-        <img src="<%= finstagram_post[:photo_url] %>" alt="finstagram post from <%= finstagram_post[:username] %>">
-      </a>
-      <div class="actions">
-        <%= finstagram_post[:like_count] %> likes
-        <span class="comment-count"><%= finstagram_post[:comment_count] %> comment</span>
-      </div>
-      <ul class="comments">
-        <li>
-          <p>
-            <%= finstagram_post[:comments][0][:username] if finstagram_post[:comments] %>: 
-            <%= finstagram_post[:comments][0][:text] if finstagram_post[:comments] %>
-          </p>
-        </li>
-      </ul>
-    </article>
-  <% end %>
-</main>
+<% @finstagram_posts.each do |my_finstagram_post| %>
+    <%= erb(:'shared/finstagram_post', { locals: { finstagram_post: my_finstagram_post }}) %>
+<% end %>

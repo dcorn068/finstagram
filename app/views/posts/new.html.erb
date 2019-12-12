@@ -1,10 +1,8 @@
-<ul class="errors">
-  <% @new_post.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
-</ul>
+<h2>New Post</h2>
 
-<form method="POST" action="/new_post" 
+<%= erb(:'shared/errors_list', { locals: { errors: @new_post.errors.full_messages }}) %>
+
+<form method="POST" action="/posts" 
 style="width: fit-content; margin: 2em auto;"
 >
   <div class="form-group">

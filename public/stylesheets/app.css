@@ -5,7 +5,7 @@ header {
   background-color: #244751;
   color: #e8fdff;
   padding-left: 1em;
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -15,7 +15,7 @@ header {
   margin-bottom: 48px;
 }
 [role="main"] {
-  padding-top: 6em;
+  padding-top: 1em;
 }
 .finstagram-post .user-info img {
   border-radius: 50%;
@@ -30,11 +30,6 @@ header {
 }
 .user-info:hover img {
   transform: rotate(1080deg);
-  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-a.photo:active {
-  transform: scale(0.1) rotate(4deg) skew(6deg) rotate(10turn);
-  opacity: 0;
   transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .actions:hover {
