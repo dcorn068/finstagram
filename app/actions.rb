@@ -26,6 +26,10 @@ helpers do
         erb(:login)
     end
   end
+
+  def comments_form_partial(my_finstagram_post, allow_comments)
+    return erb(:'shared/finstagram_post', { locals: { finstagram_post: my_finstagram_post, allow_new_comment: allow_comments }})
+  end
 end
 
 
@@ -137,7 +141,28 @@ end
 ##########################
 #### VIEW SINGLE POST ####
 ##########################
+
 get '/posts/:id' do
   @finstagram_post = FinstagramPost.find(params[:id])   # find the finstagram post with the ID from the URL
   erb(:"posts/show")               # render app/views/finstagram_posts/show.erb
+end
+
+
+#####################
+#### NEW COMMENT ####
+#####################
+
+post '/comments' do
+  # point values from params to variables
+  my_comment_text = params[:text]
+  finstagram_post_id = params[:finstagram_post_id]
+
+  # instantiate a comment with those values & assign the comment to the `current_user`
+  comment = Comment.new({ text: my_comment_text, finstagram_post_id: finstagram_post_id, user_id: current_user.id })
+
+  # save the comment
+  comment.save
+
+  # `redirect` back to wherever we came from
+  redirect(back)
 end
